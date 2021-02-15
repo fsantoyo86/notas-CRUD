@@ -1,26 +1,25 @@
 import React from 'react';
 import {Route,Switch, Link} from 'react-router-dom';
-import CreateEmpleado from './CreateEmpleado';
-import EmpleadoList from './EmpleadoList';
-import EditEmpleado from './EditEmpleado';
+import CreateNota from './CreateNota';
+import ListaNotas from './ListaNotas';
+import EditNota from './EditNota';
 
 function App() {
   return (
     <div>
-      <nav className="">
-        <ul className="flex flex-wrap justify-center m-0 p-5 bg-pink-700 text-white">
-          <li className="px-4 hover:text-gray-300">
-            <Link to="/">Empleados</Link>
+      <nav className="flex justify-center bg-gray-700 items-center text-white p-5">
+        <ul>
+          <Link to="/create">
+          <li className="text-xl hover:text-gray-300 cursor-pointer">
+            Crear nota
           </li>
-          <li className="px-4 hover:text-gray-300">
-            <Link to="/create">Registrar</Link>
-          </li>
+          </Link>
         </ul>
       </nav>
       <Switch>
-        <Route exact path="/" component={EmpleadoList}></Route>
-        <Route path="/edit/:id" component={EditEmpleado}></Route>
-        <Route path="/create" component={CreateEmpleado}></Route>
+        <Route exact path="/" component={ListaNotas}></Route>
+        <Route path="/edit/:id" component={EditNota}></Route>
+        <Route path="/create" component={CreateNota}></Route>
       </Switch>
     </div>
   );
